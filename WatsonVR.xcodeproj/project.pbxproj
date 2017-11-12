@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 48;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,7 @@
 		3143A4CC1E04C87E001FF7A3 /* SubTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3143A4CB1E04C87E001FF7A3 /* SubTableViewController.swift */; };
 		3143A4CF1E04D706001FF7A3 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3143A4CE1E04D706001FF7A3 /* SwiftyJSON.framework */; };
 		31E386881E056DA30004DC89 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E386871E056DA30004DC89 /* ResultTableViewCell.swift */; };
+		CEA5FF1B1FB6F02700E304EF /* MainViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5FF1A1FB6F02700E304EF /* MainViewController2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		3143A4D11E04E4E4001FF7A3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		3143A4D21E04E4E4001FF7A3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		31E386871E056DA30004DC89 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		CEA5FF1A1FB6F02700E304EF /* MainViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				3143A4B51E04C60B001FF7A3 /* AppDelegate.swift */,
 				3143A4B91E04C60B001FF7A3 /* Main.storyboard */,
 				3143A4C71E04C6F3001FF7A3 /* MainViewController.swift */,
+				CEA5FF1A1FB6F02700E304EF /* MainViewController2.swift */,
 				3143A4CB1E04C87E001FF7A3 /* SubTableViewController.swift */,
 				31E386871E056DA30004DC89 /* ResultTableViewCell.swift */,
 				3143A4BC1E04C60B001FF7A3 /* Assets.xcassets */,
@@ -122,7 +125,7 @@
 				};
 			};
 			buildConfigurationList = 3143A4AD1E04C60A001FF7A3 /* Build configuration list for PBXProject "WatsonVR" */;
-			compatibilityVersion = "Xcode 3.2";
+			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -174,6 +177,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA5FF1B1FB6F02700E304EF /* MainViewController2.swift in Sources */,
 				3143A4B61E04C60B001FF7A3 /* AppDelegate.swift in Sources */,
 				3143A4CC1E04C87E001FF7A3 /* SubTableViewController.swift in Sources */,
 				31E386881E056DA30004DC89 /* ResultTableViewCell.swift in Sources */,
@@ -253,6 +257,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -296,6 +301,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

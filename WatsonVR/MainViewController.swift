@@ -125,7 +125,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
 
         // API呼び出し準備
-        let APIKey = "" // APIKeyを取得してここに記述
+        let APIKey = "57148e0be0e6b81abf7d7a003ae29bbf234900b6" // APIKeyを取得してここに記述
         let url = "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/detect_faces?api_key=" + APIKey + "&version=2016-05-20"
         guard let destURL = URL(string: url) else {
             print ("url is NG: " + url) // debug
@@ -157,7 +157,7 @@ class MainViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                         self.activityIndicator.stopAnimating()
                         if appDelegate.analyzedFaces.count > 0 {
                             // 顔解析結果あり
-                            self.performSegue(withIdentifier: "ShowResult", sender: self)
+                            self.performSegue(withIdentifier: "ShowResultFace", sender: self)
                         } else {
                             // 顔解析結果なし
                             let actionSheet = UIAlertController(title:"エラー", message: "顔検出されませんでした", preferredStyle: .alert)
