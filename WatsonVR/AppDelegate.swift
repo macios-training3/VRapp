@@ -22,7 +22,7 @@ class AnalyzedFace {
 class AnalyzedFood {
   var imageFood: UIImage?
   var foodClass: String?
-  var score: String?
+  var foodScore: String?
 }
 
 

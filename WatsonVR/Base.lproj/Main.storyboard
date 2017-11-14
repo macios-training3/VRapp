@@ -267,6 +267,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="T7Z-DM-NUf"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W9K-BD-wQF">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -385,19 +386,25 @@
         <scene sceneID="gpL-9N-id4">
             <objects>
                 <viewController id="lWe-We-VZC" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8qI-0f-PsT"/>
-                        <viewControllerLayoutGuide type="bottom" id="gHN-2G-dHb"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="p3I-nK-BtD">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="88" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ovh-dg-ac7">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="88" id="AiO-ZV-9ti">
+                                <rect key="frame" x="0.0" y="28" width="414" height="88"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AiO-ZV-9ti" id="ex2-Cc-zmK">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="87.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y0S-lS-0Hk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2381" y="897"/>
+            <point key="canvasLocation" x="2379.7101449275365" y="896.73913043478262"/>
         </scene>
     </scenes>
 </document>

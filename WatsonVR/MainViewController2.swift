@@ -53,9 +53,9 @@ class MainViewController2: UIViewController, UIImagePickerControllerDelegate, UI
    解析開始ボタンTap
    */
   @IBAction func analyzeButtonTapped(_ sender: Any) {
-    self.performSegue(withIdentifier: "ShowResultFood", sender: self)
+//    self.performSegue(withIdentifier: "ShowResultFood", sender: self)
 
-/*    guard let selectedImage = self.selectedImageView2.image else {
+    guard let selectedImage = self.selectedImageView2.image else {
       return
     }
     // API仕様の画像サイズを超えないようにリサイズしてからAPIコールする
@@ -63,7 +63,6 @@ class MainViewController2: UIViewController, UIImagePickerControllerDelegate, UI
       return
     }
     self.callApi(image: resizedImage)
-*/
   }
 
  
@@ -124,13 +123,13 @@ class MainViewController2: UIViewController, UIImagePickerControllerDelegate, UI
    API連携
    - parameter image: 解析対象画像イメージ
    */
-/*  func callApi(image: UIImage) {
+  func callApi(image: UIImage) {
     // 解析結果はAppDelegateの変数を経由してSubViewに渡す
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
     // API呼び出し準備
     let APIKey = "57148e0be0e6b81abf7d7a003ae29bbf234900b6" // APIKeyを取得してここに記述
-    let url = "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/detect_faces?api_key=" + APIKey + "&version=2016-05-20"
+    let url = "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify?api_key=" + APIKey + "&version=2016-05-20"
     guard let destURL = URL(string: url) else {
       print ("url is NG: " + url) // debug
       return
@@ -152,7 +151,7 @@ class MainViewController2: UIViewController, UIImagePickerControllerDelegate, UI
         let json = JSON(data: data!)
         print(json) // debug
         
-//        appDelegate.analyzedFood = self.interpretJson(image: image, json: json)
+        appDelegate.analyzedFood = self.interpretJson(image: image, json: json)
         
         // リクエストは非同期のため画面遷移をmainQueueで行わないとエラーになる
         OperationQueue.main.addOperation(
@@ -184,66 +183,35 @@ class MainViewController2: UIViewController, UIImagePickerControllerDelegate, UI
     
     task.resume()
   }
-*/
+
   /**
    解析結果のJSONを解釈してAnalyzedFace型の配列で返す
    - parameter image: 元画像
    - parameter json: JSONデータ
    - returns: AnalyzedFood型の配列
    */
-/*  func interpretJson(image: UIImage, json: JSON) -> Array<AnalyzedFace> {
-    var analyzedFaces: Array<AnalyzedFace> = []
-    let facesJson = json["images"][0]["faces"].arrayValue
-    // レスポンスのimageFaces要素は配列となっている（複数人が映った画像の解析が可能）
-    for faceJson in facesJson {
-      let face = AnalyzedFace()
-      // 性別およびスコア
-      guard let gender = faceJson["gender"]["gender"].string else {
+  func interpretJson(image: UIImage, json: JSON) -> Array<AnalyzedFood> {
+    var analyzedFood: Array<AnalyzedFood> = []
+    let foodsJson = json["images"][0]["classifiers"].arrayValue
+    // レスポンスのimageFood要素は配列となっている（複数画像の解析が可能）
+    for foodJson in foodsJson {
+      let food = AnalyzedFood()
+      // クラス抽出
+      guard let foodClass = foodJson["classes"]["class"].string else {
         continue
       }
-      if gender == "MALE" {
-        face.gender = "男性"
-      } else {
-        face.gender = "女性"
-      }
-      guard let genderScore = faceJson["gender"]["score"].double else {
+      // スコア抽出
+      guard let foodScore = foodJson["classes"]["score"].double else {
         continue
       }
-      face.genderScore = String(floor(genderScore * 1000) / 10)
-      // 年齢およびスコア
-      if let ageMin = faceJson["age"]["min"].int {
-        face.ageMin = String(ageMin)
-      }
-      if let ageMax = faceJson["age"]["max"].int {
-        face.ageMax = String(ageMax)
-      }
-      guard let ageScore = faceJson["age"]["score"].double else {
-        continue
-      }
-      face.ageScore = String(floor(ageScore * 1000) / 10)
-      // Identity
-      if let identity = faceJson["identity"]["name"].string {
-        face.identity = identity
-      }
-      // 検出された顔の矩形
-      guard let left = faceJson["face_location"]["left"].int else {
-        continue
-      }
-      guard let top = faceJson["face_location"]["top"].int else {
-        continue
-      }
-      guard let width = faceJson["face_location"]["width"].int else {
-        continue
-      }
-      guard let height = faceJson["face_location"]["height"].int else {
-        continue
-      }
-      // 元画像から切り抜いて変数にセット
-      face.image = self.cropping(image: image, left: CGFloat(left), top: CGFloat(top), width: CGFloat(width), height: CGFloat(height))
+      food.foodScore = String(floor(foodScore * 1000) / 10)
+      // 元画像を変数にセット
+/*      food.imageFood = self.cropping(image: image, left: CGFloat(left), top: CGFloat(top), width: CGFloat(width), height: CGFloat(height))
       // 抽出完了
-      analyzedFaces.append(face)
+ */
+      analyzedFood.append(food)
     }
-    return analyzedFaces
+    return analyzedFood
   }
   
   /**
@@ -255,7 +223,7 @@ class MainViewController2: UIViewController, UIImagePickerControllerDelegate, UI
    - parameter height: 高さ
    - returns: UIImage
    */
-  func cropping(image: UIImage, left: CGFloat, top: CGFloat, width: CGFloat, height: CGFloat) -> UIImage? {
+/*  func cropping(image: UIImage, left: CGFloat, top: CGFloat, width: CGFloat, height: CGFloat) -> UIImage? {
     let imgRef = image.cgImage?.cropping(to: CGRect(x: left, y: top, width: width, height: height))
     return UIImage(cgImage: imgRef!, scale: image.scale, orientation: image.imageOrientation)
   }
