@@ -292,7 +292,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カメラで顔を撮影するか、またはフォトライブラリから写真を選択して「解析開始」をタップ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16q-jE-OsE" userLabel="Guide Label2">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="カメラで物を撮影するか、またはフォトライブラリから写真を選択して「解析開始」をタップ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16q-jE-OsE" userLabel="Guide Label2">
                                 <rect key="frame" x="16" y="144" width="288" height="152"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="288" id="Z5m-dc-3xw"/>
@@ -391,7 +391,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" rowHeight="155" id="cfI-KH-Tru" userLabel="Result Cell2" customClass="ResultTableViewCell2" customModule="WatsonVR" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell2" rowHeight="155" id="cfI-KH-Tru" userLabel="Result Cell2" customClass="ResultTableViewCell2" customModule="WatsonVR" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="155"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cfI-KH-Tru" id="s0u-sQ-mDY">
@@ -401,7 +401,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnP-mv-kI5" userLabel="Container View">
                                             <rect key="frame" x="96" y="8" width="224" height="138.5"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性別：男性" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKt-VG-hjP" userLabel="Gender Name Label">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="クラス：食べ物" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SKt-VG-hjP" userLabel="Class Name Label">
                                                     <rect key="frame" x="0.0" y="0.0" width="224.5" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="Fqr-v7-3Tn"/>
@@ -410,7 +410,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　　　確信度：NN.N%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7l-eF-S90" userLabel="Gender Score Label">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="　　　確信度：NN.N%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7l-eF-S90" userLabel="Class Score Label">
                                                     <rect key="frame" x="0.0" y="29" width="224.5" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="21" id="8zq-OL-Ul3"/>
@@ -469,7 +469,7 @@
                                                 <constraint firstItem="8NE-ER-eOu" firstAttribute="leading" secondItem="qnP-mv-kI5" secondAttribute="leading" id="xGX-5E-Bo9"/>
                                             </constraints>
                                         </view>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k3m-de-h2D" userLabel="Face Image View">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k3m-de-h2D" userLabel="Food Image View">
                                             <rect key="frame" x="8" y="8" width="80" height="80"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="k3m-de-h2D" secondAttribute="height" multiplier="1:1" id="7ZR-CB-50X"/>
@@ -491,12 +491,8 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="ageRangeLabel" destination="8NE-ER-eOu" id="Pua-ND-nJc"/>
-                                    <outlet property="ageScoreLabel" destination="TTc-DH-RDt" id="fCS-vy-7Yy"/>
-                                    <outlet property="faceImageView" destination="k3m-de-h2D" id="V5v-fd-U3v"/>
-                                    <outlet property="genderNameLabel" destination="SKt-VG-hjP" id="PV9-i5-y04"/>
-                                    <outlet property="genderScoreLabel" destination="L7l-eF-S90" id="DG5-dH-JtF"/>
-                                    <outlet property="identityLabel" destination="SfG-dw-e12" id="k9D-ae-Bxr"/>
+                                    <outlet property="classNameLabel" destination="SKt-VG-hjP" id="Nwc-mJ-XGq"/>
+                                    <outlet property="classScoreLabel" destination="L7l-eF-S90" id="3kj-fF-uwS"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

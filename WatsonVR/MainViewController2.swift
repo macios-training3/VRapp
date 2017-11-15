@@ -185,32 +185,32 @@ class MainViewController2: UIViewController, UIImagePickerControllerDelegate, UI
     }
     
     /**
-     解析結果のJSONを解釈してAnalyzedFace型の配列で返す
+     解析結果のJSONを解釈してAnalyzedFood型の配列で返す
      - parameter image: 元画像
      - parameter json: JSONデータ
      - returns: AnalyzedFood型の配列
      */
     func interpretJson(image: UIImage, json: JSON) -> Array<AnalyzedFood> {
         var analyzedFood: Array<AnalyzedFood> = []
-        let foodsJson = json["images"][0]["classifiers"].arrayValue
+        let foodsJson = json["images"][0]["classifiers"][0]["classes"].arrayValue
         // レスポンスのimageFood要素は配列となっている（複数画像の解析が可能）
         for foodJson in foodsJson {
             let food = AnalyzedFood()
             // クラス抽出
-            guard let foodClass = foodJson["classes"]["class"].string else {
+            guard let foodClass = foodJson["class"].string else {
                 continue
             }
+            food.foodClass = foodClass
             // スコア抽出
-            guard let foodScore = foodJson["classes"]["score"].double else {
+            guard let foodScore = foodJson["score"].double else {
                 continue
             }
-            //food.foodScore = String(floor(foodScore * 1000) / 10)
-            // 元画像を変数にセット
-            /*      food.imageFood = self.cropping(image: image, left: CGFloat(left), top: CGFloat(top), width: CGFloat(width), height: CGFloat(height))
-             // 抽出完了
-             */
+            food.foodScore = String(floor(foodScore * 1000) / 10)
             analyzedFood.append(food)
         }
+        // 元画像を変数にセット
+        //food.imageFood = self.cropping(image: image, left: CGFloat(left), top: CGFloat(top), width: CGFloat(width), height: CGFloat(height))
+        // 抽出完了
         return analyzedFood
     }
     
