@@ -206,10 +206,11 @@ class MainViewController2: UIViewController, UIImagePickerControllerDelegate, UI
                 continue
             }
             food.foodScore = String(floor(foodScore * 1000) / 10)
+            // 元画像を変数にセット
+            food.imageFood = image
             analyzedFood.append(food)
         }
-        // 元画像を変数にセット
-        //food.imageFood = self.cropping(image: image, left: CGFloat(left), top: CGFloat(top), width: CGFloat(width), height: CGFloat(height))
+        
         // 抽出完了
         return analyzedFood
     }

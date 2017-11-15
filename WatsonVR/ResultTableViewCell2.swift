@@ -23,7 +23,7 @@ class ResultTableViewCell2: UITableViewCell {
      - parameter data: 解析結果
      */
     func setData(data: AnalyzedFood) {
-        //self.foodImageView.image = data.imageFood
+        self.foodImageView.image = data.imageFood
         if let foodClass = data.foodClass {
             self.classNameLabel.text = "クラス：" + foodClass
         }
