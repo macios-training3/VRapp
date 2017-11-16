@@ -16,6 +16,7 @@
 		3143A4CF1E04D706001FF7A3 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3143A4CE1E04D706001FF7A3 /* SwiftyJSON.framework */; };
 		31E386881E056DA30004DC89 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E386871E056DA30004DC89 /* ResultTableViewCell.swift */; };
 		CE40F5E21FBBCEDB00707A60 /* ResultTableViewCell2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40F5E11FBBCEDB00707A60 /* ResultTableViewCell2.swift */; };
+		CE40F5E61FBC289100707A60 /* ResultImageViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE40F5E51FBC289100707A60 /* ResultImageViewCell.swift */; };
 		CEA5FF1B1FB6F02700E304EF /* MainViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA5FF1A1FB6F02700E304EF /* MainViewController2.swift */; };
 		CEDBF5AE1FB9A032002EF3CD /* OriginalTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDBF5AD1FB9A032002EF3CD /* OriginalTabBarController.swift */; };
 		CEF53CB71FBA76D800944543 /* SubTableViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF53CB61FBA76D800944543 /* SubTableViewController2.swift */; };
@@ -35,6 +36,7 @@
 		3143A4D21E04E4E4001FF7A3 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		31E386871E056DA30004DC89 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		CE40F5E11FBBCEDB00707A60 /* ResultTableViewCell2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell2.swift; sourceTree = "<group>"; };
+		CE40F5E51FBC289100707A60 /* ResultImageViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultImageViewCell.swift; sourceTree = "<group>"; };
 		CEA5FF1A1FB6F02700E304EF /* MainViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController2.swift; sourceTree = "<group>"; };
 		CEDBF5AD1FB9A032002EF3CD /* OriginalTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OriginalTabBarController.swift; path = ../OriginalTabBarController.swift; sourceTree = "<group>"; };
 		CEF53CB61FBA76D800944543 /* SubTableViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubTableViewController2.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				CEF53CB61FBA76D800944543 /* SubTableViewController2.swift */,
 				31E386871E056DA30004DC89 /* ResultTableViewCell.swift */,
 				CE40F5E11FBBCEDB00707A60 /* ResultTableViewCell2.swift */,
+				CE40F5E51FBC289100707A60 /* ResultImageViewCell.swift */,
 				CEDBF5AD1FB9A032002EF3CD /* OriginalTabBarController.swift */,
 				3143A4BC1E04C60B001FF7A3 /* Assets.xcassets */,
 				3143A4BE1E04C60B001FF7A3 /* LaunchScreen.storyboard */,
@@ -194,6 +197,7 @@
 				3143A4CC1E04C87E001FF7A3 /* SubTableViewController.swift in Sources */,
 				31E386881E056DA30004DC89 /* ResultTableViewCell.swift in Sources */,
 				3143A4C81E04C6F3001FF7A3 /* MainViewController.swift in Sources */,
+				CE40F5E61FBC289100707A60 /* ResultImageViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

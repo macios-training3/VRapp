@@ -151,7 +151,10 @@ class MainViewController2: UIViewController, UIImagePickerControllerDelegate, UI
                 let json = JSON(data: data!)
                 print(json) // debug
                 
+                // 解析結果を変数にセット
                 appDelegate.analyzedFood = self.interpretJson(image: image, json: json)
+                // 元画像を変数にセット
+                appDelegate.imageFood = image
                 
                 // リクエストは非同期のため画面遷移をmainQueueで行わないとエラーになる
                 OperationQueue.main.addOperation(
@@ -206,8 +209,8 @@ class MainViewController2: UIViewController, UIImagePickerControllerDelegate, UI
                 continue
             }
             food.foodScore = String(floor(foodScore * 1000) / 10)
-            // 元画像を変数にセット
-            food.imageFood = image
+            
+            //food.imageFood = image
             analyzedFood.append(food)
         }
         

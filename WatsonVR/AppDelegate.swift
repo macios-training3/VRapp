@@ -34,6 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //ViewController間でデータを受け渡しするための変数
     var analyzedFaces: Array<AnalyzedFace> = []
     var analyzedFood:  Array<AnalyzedFood> = []
+    var imageFood: UIImage?
 
   
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

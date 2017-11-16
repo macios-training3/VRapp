@@ -15,6 +15,7 @@ class SubTableViewController2: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -31,12 +32,32 @@ class SubTableViewController2: UITableViewController {
     }
     
     /**
-     セルの項目をセット
+     データ用セルの項目をセット
      */
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let result = self.appDelegate.analyzedFood[indexPath.row]
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell2", for: indexPath) as! ResultTableViewCell2
-        cell.setData(data: result)
-        return cell
+        
+        switch indexPath.row{
+            
+        //case 0:
+        //    let cell = tableView.dequeueReusableCellWithIdentifier("TVCCellA") as TVCCellA
+        //    cell.cellATextLabel.text = "CustomCellA"
+        //    return cell
+            
+        case 0:
+            let image = self.appDelegate.imageFood
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ResultImage", for: indexPath) as! ResultImageViewCell
+            //let imageData:UIImage = UIImage(named:"swift")!
+            cell.setImage(image: image!)
+            return cell
+            
+        default:
+            let result = self.appDelegate.analyzedFood[indexPath.row]
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ResultCell2", for: indexPath) as! ResultTableViewCell2
+            cell.setData(data: result)
+            return cell
+            
+        }
+        
     }
+    
 }
