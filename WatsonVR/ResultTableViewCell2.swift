@@ -23,7 +23,7 @@ class ResultTableViewCell2: UITableViewCell {
             self.classNameLabel.text = "クラス：" + foodClass
         }
         if let foodScore = data.foodScore {
-            self.classScoreLabel.text = "　　　確信度：" + foodScore + "%"
+            self.classScoreLabel.text = "確信度：" + foodScore + "%"
         }
     }
 }
